@@ -1,61 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplicación de Gestión de Tareas en Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Una aplicación Laravel para gestionar tareas con palabras clave, con un frontend en Vue.js y base de datos SQLite.
 
-## About Laravel
+## Características
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Creación y gestión de tareas
+- Asociación de palabras clave con tareas
+- Componentes Vue.js para interfaz de usuario dinámica
+- Base de datos SQLite por simplicidad
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Prerrequisitos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP 8.2 o superior
+- Composer
+- Node.js y npm
+- SQLite (viene con PHP)
 
-## Learning Laravel
+## Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clona el repositorio:
+    ```
+    git clone <url-del-repositorio>
+    cd <directorio-del-proyecto>
+    ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. Instala las dependencias de PHP:
+    ```
+    composer install
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Instala las dependencias de JavaScript:
+    ```
+    npm install
+    ```
 
-## Laravel Sponsors
+4. Copia el archivo de entorno:
+    ```
+    cp .env.example .env
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+5. Genera la clave de la aplicación:
+    ```
+    php artisan key:generate
+    ```
 
-### Premium Partners
+6. La aplicación utiliza SQLite como base de datos. El archivo de base de datos se creará automáticamente en `database/database.sqlite` durante el paso de migración.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+7. Ejecuta las migraciones y seeders de la base de datos (importante para poblar la base de datos con datos iniciales como palabras clave):
+    ```
+    php artisan migrate --seed
+    ```
 
-## Contributing
+8. Construye los activos del frontend:
+    ```
+    npm run build
+    ```
+    O para desarrollo:
+    ```
+    npm run dev
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+9. Inicia el servidor de desarrollo:
+    ```
+    php artisan serve
+    ```
 
-## Code of Conduct
+La aplicación estará disponible en `http://localhost:8000`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Uso
 
-## Security Vulnerabilities
+- Accede a la aplicación en tu navegador.
+- Usa los componentes Vue.js para gestionar tareas y palabras clave.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Base de Datos
 
-## License
+Esta aplicación utiliza SQLite para la base de datos, que no requiere configuración adicional. El archivo de base de datos se almacena en `database/database.sqlite`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Frontend
+
+El frontend está construido con Vue.js 3, integrado vía Vite para un desarrollo y construcción rápidos.
+
+## Capturas de Pantalla
+
+### Vista Previa 1
+![Vista Previa 1](public/images/imagen1.png)
+
+### Vista Previa 2
+![Vista Previa 2](public/images/imagen2.png)
+
+### Vista Previa 3
+![Vista Previa 3](public/images/imagen3.png)
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT.
