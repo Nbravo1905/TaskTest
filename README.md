@@ -20,8 +20,8 @@ Una aplicación Laravel para gestionar tareas con palabras clave, con un fronten
 
 1. Clona el repositorio:
     ```
-    git clone <url-del-repositorio>
-    cd <directorio-del-proyecto>
+    git clone https://github.com/Nbravo1905/TaskTest
+    cd TaskTest
     ```
 
 2. Instala las dependencias de PHP:
